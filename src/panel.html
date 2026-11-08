@@ -145,6 +145,7 @@ input[type=range]{width:100%;accent-color:var(--ink)}
 .tools .ib svg{width:16px;height:16px}
 .tools .badge{margin-left:auto;font-size:12px;color:var(--muted);padding:0 8px}
 @media (max-width:520px){.tools .lb{display:none}.tools .ib{width:36px;padding:0;justify-content:center}.tools .ib .thumbmini{margin:0}}
+.fx{display:grid;grid-template-columns:1fr 1fr;gap:4px}
 .thumbmini{width:24px;height:24px;border-radius:6px;object-fit:cover}
 .it.hd{padding:10px 12px 10px 4px;background:var(--soft);box-shadow:none;border-style:dashed}
 .it.hd .tin{font-size:12.5px;text-transform:uppercase;letter-spacing:.08em}
@@ -477,8 +478,8 @@ function prepImage(file, kind) {
   if (!/^image\//.test(file.type) && !/\.(jpe?g|png|webp|gif|heic|heif)$/i.test(file.name)) return Promise.reject(new Error("Ese archivo no es una imagen."));
   if (file.size > 25 * 1024 * 1024) return Promise.reject(new Error("La imagen pesa más de 25 MB. Prueba con una más pequeña."));
   if (file.type === "image/gif" && file.size <= 1200 * 1024 && kind !== "bg") return Promise.resolve(file);
-  var size = kind === "avatar" ? 480 : kind === "thumb" ? 176 : 1800;
-  var square = kind !== "bg";
+  var size = kind === "avatar" ? 480 : kind === "thumb" ? 900 : 1800;
+  var square = kind === "avatar";
   var load = window.createImageBitmap ? createImageBitmap(file, { imageOrientation: "from-image" }).catch(function () { return loadImg(file); }) : loadImg(file);
   return load.then(function (bmp) {
     var w = bmp.width, hh = bmp.height, sx = 0, sy = 0, sw = w, sh = hh;
@@ -575,6 +576,7 @@ function tabLinks(ed) {
     h("button", { class: "btn pri", icon: "plus", onclick: function () { addItem("link"); } }, "Añadir enlace"),
     h("button", { class: "btn", icon: "heading", onclick: function () { addItem("header"); } }, "Título de sección")));
 
+  if (fichas()) ed.append(featureCard());
   var list = h("div", { class: "list", id: "list" });
   if (!c.items.length) {
     list.append(h("div", { class: "empty" }, h("b", {}, "Todavía no hay enlaces"), "Añade tu web, tu último vídeo, tu tienda o tu WhatsApp."));
@@ -612,7 +614,7 @@ function itemCard(it, idx) {
     }
   });
   var get = function () { return cfg.items.find(function (x) { return x.id === it.id; }); };
-  var title = h("input", { class: "tin", value: it.title, maxlength: 100, placeholder: it.kind === "header" ? "Título de la sección" : "Título del botón", "aria-label": "Título",
+  var title = h("input", { class: "tin", value: it.title, maxlength: 100, placeholder: it.kind === "header" ? (fichas() ? "Categoría" : "Título de la sección") : "Título del botón", "aria-label": "Título",
     oninput: function () { var v = title.value; change(function () { get().title = v; }, "t" + it.id); } });
   var vis = h("button", { class: "sw", role: "switch", "aria-checked": String(!it.hidden), "aria-label": "Visible en tu página", title: it.hidden ? "Oculto" : "Visible",
     onclick: function () { change(function () { get().hidden = !get().hidden; }); var o = get().hidden; vis.setAttribute("aria-checked", String(!o)); vis.title = o ? "Oculto" : "Visible"; card.classList.toggle("off", o); } });
@@ -644,6 +646,12 @@ function itemCard(it, idx) {
       return s;
     }
     body.append(extra);
+    if (fichas()) {
+      if (!extra.firstChild) extra.append(subInput());
+      var bd = h("input", { class: "sin", value: it.badge || "", maxlength: 12, placeholder: "Dato (45W, -15 %…)", "aria-label": "Dato destacado", oninput: function () { var v = bd.value; change(function () { get().badge = v; }, "bd" + it.id); } });
+      var br = h("input", { class: "sin", value: it.brand || "", maxlength: 30, placeholder: "Marca", "aria-label": "Marca", oninput: function () { var v = br.value; change(function () { get().brand = v; }, "br" + it.id); } });
+      body.append(h("div", { class: "fx" }, bd, br));
+    }
     var thumbBtn = h("button", { class: "ib" + (it.thumb ? " on" : ""), title: it.thumb ? "Cambiar o quitar la miniatura" : "Añadir una miniatura",
       onclick: function () {
         if (get().thumb) {
@@ -751,6 +759,21 @@ function setupDrag(handle, card) {
   });
 }
 
+function fichas() { return R.layoutOf(R.sanitize(cfg)) === "fichas"; }
+function featureCard() {
+  var f = cfg.feature || (cfg.feature = { url: "", title: "", image: "" });
+  var msg = h("div", { class: "msg bad", hidden: true });
+  var u = h("input", { class: "in", value: f.url, placeholder: "Enlace del vídeo o de lo que quieras destacar", "aria-label": "Enlace destacado", autocapitalize: "off", spellcheck: "false",
+    oninput: function () { var v = u.value.trim(); u.classList.remove("err"); msg.hidden = true; change(function (c) { c.feature.url = v; }, "fu"); },
+    onchange: function () { var v = R.normalizeUrl(u.value); u.value = v; change(function (c) { c.feature.url = v; }, "fu"); checkUrl(u, msg, v); } });
+  var t = h("input", { class: "in", value: f.title, maxlength: 100, placeholder: "Título", "aria-label": "Título destacado", oninput: function () { var v = t.value; change(function (c) { c.feature.title = v; }, "ft"); } });
+  var prev = h("button", { class: "avbig", style: "border-radius:10px;width:160px;height:90px", "aria-label": "Subir imagen", onclick: up }, f.image ? h("img", { src: imgUrl(f.image), alt: "" }) : h("span", { icon: "image" }));
+  function up() { pickFile(function (x) { uploadImage(x, "bg").then(setI, errToast); }); }
+  function setI(id) { change(function (c) { c.feature.image = id; }); renderTab(); }
+  dropZone(prev, "bg", setI);
+  return h("div", { class: "card" }, h("h3", {}, "Destacado ", h("small", {}, "tu último vídeo, por ejemplo")),
+    h("div", { class: "row", style: "align-items:flex-start;flex-wrap:wrap" }, prev, h("div", { style: "flex:1;min-width:200px;display:grid;gap:8px" }, u, t, msg)));
+}
 function socialsCard() {
   var card = h("div", { class: "card" }, h("h3", {}, "Redes sociales ", h("small", {}, "salen como iconos")));
   var box = h("div", { class: "soc" });
@@ -864,19 +887,31 @@ function tabDesign(ed) {
   Object.keys(R.TEMPLATES).forEach(function (k) {
     var tp = R.TEMPLATES[k];
     var mock = h("div", { class: "mock", style: bgStyle(tp) + ";font-family:" + R.FONTS[tp.font].css + ";color:" + tp.text },
-      h("div", { class: "dot", style: "background:" + tp.text + ";opacity:.85" }),
+      h("div", { class: "dot", style: "background:" + (tp.layout ? tp.bg2 : tp.text) + ";opacity:.85" }),
       h("div", { class: "bar", style: barStyle(tp) }), h("div", { class: "bar", style: barStyle(tp) }), h("div", { class: "bar", style: barStyle(tp) }));
     tpls.append(h("button", { class: "tpl", "aria-pressed": String(t.template === k), "aria-label": "Plantilla " + tp.label, onclick: function () {
       change(function (c) {
         var img = c.theme.bgImage, ov = c.theme.overlay, wasImg = c.theme.bgType === "image" && img;
         c.theme = R.defaultTheme(k); c.theme.bgImage = img; c.theme.overlay = ov;
-        if (wasImg) readableOnPhoto(c.theme);
+        if (wasImg && !R.TEMPLATES[k].layout) readableOnPhoto(c.theme);
       });
       renderTab();
     } }, mock, h("span", { class: "nm" }, tp.label)));
   });
   ed.append(h("div", { class: "card" }, h("h3", {}, "Plantillas"), tpls));
 
+  if (R.TEMPLATES[t.template].layout === "fichas") {
+    var host = h("div", { class: "card", id: "warnhost" }, h("h3", {}, "Colores"), h("div", { class: "grid2" },
+      colorField("Fondo", "bg"), colorField("Módulos de arriba", "bg2"), colorField("Texto", "text"), colorField("Acento", "btnBg"), colorField("Papel de las fichas", "btnText")));
+    var w0 = contrastWarning(); if (w0) host.append(w0);
+    ed.append(host);
+    var ctaI = h("input", { class: "in", value: cfg.cta || "", maxlength: 24, placeholder: "Abrir", oninput: function () { var v = ctaI.value; change(function (c) { c.cta = v; }, "cta"); } });
+    var fl = h("div", { class: "fonts" });
+    Object.keys(R.FONTS).forEach(function (k) { var f = R.FONTS[k]; fl.append(h("button", { "aria-pressed": String(t.font === k), style: "font-family:" + f.css + ";font-weight:600", onclick: function () { change(function (c) { c.theme.font = k; }); renderTab(); } }, f.label)); });
+    ed.append(h("div", { class: "card" }, h("h3", {}, "Texto"), h("label", { class: "field" }, h("span", {}, "Botón de cada ficha"), ctaI), fl,
+      h("p", { class: "hint", style: "margin-top:10px" }, "Los títulos de sección de la pestaña Enlaces son las categorías de arriba de las fichas.")));
+    return;
+  }
   // Fondo
   var fondo = h("div", { class: "card" }, h("h3", {}, "Fondo"));
   fondo.append(seg([["solid", "Color"], ["gradient", "Degradado"], ["image", "Imagen"]], t.bgType, function (v) {
@@ -943,6 +978,13 @@ function readableOnPhoto(t) {
 function mix(a, b, k) { var x = parseInt(a.slice(1), 16), y = parseInt(b.slice(1), 16); var o = [16, 8, 0].map(function (s) { return Math.round(((x >> s) & 255) * (1 - k) + ((y >> s) & 255) * k); }); return "#" + o.map(function (v) { return v.toString(16).padStart(2, "0"); }).join(""); }
 function contrastIssues(t) {
   // Fondos que hay detrás del texto: el color (o los dos del degradado); con foto, un gris medio con el velo.
+  if (R.TEMPLATES[t.template].layout === "fichas") {
+    var b2 = [];
+    if (contrast(t.text, t.bg2) < 4.5) b2.push("el texto y los módulos");
+    if (contrast(t.text, t.btnText) < 4.5) b2.push("el texto y las fichas");
+    if (contrast(t.btnBg, t.text) < 3) b2.push("el acento y el texto");
+    return b2;
+  }
   var bgs = t.bgType === "gradient" ? [t.bg, t.bg2] : t.bgType === "image" ? [mix("#8a8a8a", "#000000", t.overlay / 100)] : [t.bg];
   var low = function (a, b, min) { return contrast(a, b) < min; };
   var bad = [];
@@ -978,7 +1020,7 @@ function refreshWarn() {
   var nw = contrastWarning();
   if (old && nw) old.replaceWith(nw);
   else if (old) old.remove();
-  else if (nw) { var cards = document.querySelectorAll("#ed .card"); if (cards[2]) cards[2].append(nw); }
+  else if (nw) { var cards = document.querySelectorAll("#ed .card"), wh = $("warnhost") || cards[2]; if (wh) wh.append(nw); }
 }
 function rangeField(label, key, min, max, unit) {
   var out = h("small", {}, " " + cfg.theme[key] + unit);
@@ -1018,7 +1060,8 @@ function tabStats(ed) {
     box.append(h("div", { class: "card chart" }, h("h3", {}, "Visitas por día"), chart(s.series)));
     var rows = cfg.items.filter(function (i) { return i.kind === "link"; }).map(function (i) { return [i.title || i.url || "Sin título", s.links[i.id] || 0]; });
     rows.sort(function (a, b) { return b[1] - a[1]; });
-    var known = {}; cfg.items.forEach(function (i) { known[i.id] = 1; });
+    var known = { video: 1 }; cfg.items.forEach(function (i) { known[i.id] = 1; });
+    if (s.links.video) rows.push(["Destacado", s.links.video]);
     var gone = Object.keys(s.links).reduce(function (t, k) { return known[k] ? t : t + s.links[k]; }, 0);
     if (gone) rows.push(["Enlaces que ya borraste", gone]);
     box.append(h("div", { class: "card" }, h("h3", {}, "Clics por enlace"), rank(rows, "Aún no hay enlaces.")));
@@ -1109,6 +1152,8 @@ function tabSettings(ed) {
 function publish() {
   var bad = cfg.items.filter(function (i) { return i.kind === "link" && i.url && !R.safeUrl(i.url); });
   var badS = cfg.socials.filter(function (s) { return s.url && !R.safeUrl(s.url); });
+  var fu = cfg.feature && cfg.feature.url;
+  if (fu && !R.safeUrl(fu)) badS = badS.concat([{}]);
   if (bad.length || badS.length) {
     go("enlaces");
     toast("Revisa " + plural(bad.length + badS.length, "dirección que está mal escrita", "direcciones que están mal escritas") + " (en rojo).", { bad: true });

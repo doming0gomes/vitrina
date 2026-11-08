@@ -273,6 +273,7 @@ async function hit(request, env, ctx) {
     const cfg = await loadConfig(env);
     if (!cfg) return new Response(null, { status: 204 });
     if (d.t === "c" && cfg.items.some((i) => i.id === d.id && i.kind === "link" && !i.hidden)) key = "c:" + d.id;
+    if (d.t === "c" && d.id === "video" && cfg.feature.url) key = "c:video";
     if (d.t === "s" && cfg.socials.some((s) => s.type === d.id)) key = "s:" + d.id;
   }
   if (!key) return new Response(null, { status: 204 });
@@ -388,6 +389,7 @@ async function handleApi(request, env, url, ctx) {
     const keep = (id) => { if (id && !exists.has(id)) { missing++; return ""; } return id; };
     cfg.profile.avatar = keep(cfg.profile.avatar);
     cfg.theme.bgImage = keep(cfg.theme.bgImage);
+    cfg.feature.image = keep(cfg.feature.image);
     if (cfg.theme.bgType === "image" && !cfg.theme.bgImage) cfg.theme.bgType = "solid";
     cfg.items.forEach((i) => { i.thumb = keep(i.thumb); });
     const now = Date.now();
