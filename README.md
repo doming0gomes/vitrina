@@ -5,7 +5,7 @@ Tu propia página de enlaces, como Linktree o Beacons, pero tuya y gratis. La po
 Tiene dos partes:
 
 - **La página** que ve la gente: tu foto, tu nombre, unas líneas sobre ti, los iconos de tus redes y tus botones.
-- **El panel**, con contraseña, donde lo cambias todo y lo ves en directo en un móvil de muestra: subir la foto, añadir, ordenar y ocultar enlaces, elegir una de las 10 plantillas o cambiar colores, fondo (color, degradado o foto), letra y forma de los botones. También cuenta las visitas y los clics de cada enlace, sin cookies.
+- **El panel**, con contraseña, donde lo cambias todo y lo ves en directo en un móvil de muestra: subir la foto, añadir, ordenar y ocultar enlaces, elegir una de las 11 plantillas o cambiar colores, fondo (color, degradado o foto), letra y forma de los botones. También cuenta las visitas y los clics de cada enlace, sin cookies.
 
 Sin anuncios, sin «hecho con…» al pie y sin pagar por quitarlo. Tus datos se quedan en tu cuenta.
 
@@ -73,7 +73,7 @@ Vitrina crea sola, al lado del archivo, una carpeta `vitrina-datos` con tu pági
 
 - **Enlaces:** pega una dirección (`tuweb.com`, un correo o un teléfono) y Vitrina la completa sola. Arrastra los botones para ordenarlos, ocúltalos con el interruptor sin borrarlos, añade una miniatura, un texto pequeño debajo o haz que uno se mueva para llamar la atención.
 - **Redes:** elige las tuyas y escribe tu @. Salen como iconos arriba o abajo.
-- **Diseño:** 10 plantillas, y luego retocas el fondo, los botones y la letra. Si eliges colores que se leen mal, te avisa.
+- **Diseño:** 11 plantillas, y luego retocas el fondo, los botones y la letra. Si eliges colores que se leen mal, te avisa.
 - **Estadísticas:** visitas por día, clics en cada enlace y en cada red, de los últimos 7, 30 o 90 días.
 - **Ajustes:** cambiar la contraseña y descargar o restaurar una copia de seguridad.
 
