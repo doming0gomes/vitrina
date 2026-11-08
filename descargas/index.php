@@ -27,7 +27,7 @@ const VT_MAX_FAILS = 8;
 const VT_FAIL_WINDOW = 900;          // 15 minutos
 
 $VT = json_decode(<<<'VT_DATA'
-{"templates":{"papel":{"label":"Papel","font":"dmsans","bgType":"solid","bg":"#f3efe6","bg2":"#e6dfcf","angle":160,"text":"#161513","btnStyle":"fill","btnShape":"pill","btnBg":"#161513","btnText":"#f3efe6"},"noche":{"label":"Noche","font":"inter","bgType":"solid","bg":"#0f1013","bg2":"#1c1e24","angle":160,"text":"#f2f2f0","btnStyle":"outline","btnShape":"rounded","btnBg":"#f2f2f0","btnText":"#0f1013"},"lima":{"label":"Lima","font":"grotesk","bgType":"solid","bg":"#d4f45a","bg2":"#b9e23a","angle":160,"text":"#121212","btnStyle":"shadow","btnShape":"rounded","btnBg":"#ffffff","btnText":"#121212"},"cristal":{"label":"Cristal","font":"outfit","bgType":"gradient","bg":"#2d1f8f","bg2":"#9c2a6b","angle":150,"text":"#ffffff","btnStyle":"glass","btnShape":"pill","btnBg":"#ffffff","btnText":"#ffffff"},"editorial":{"label":"Editorial","font":"fraunces","bgType":"solid","bg":"#f7f3ec","bg2":"#ede6d8","angle":160,"text":"#1b1a17","btnStyle":"line","btnShape":"square","btnBg":"#1b1a17","btnText":"#f7f3ec"},"oceano":{"label":"Océano","font":"inter","bgType":"gradient","bg":"#0b2545","bg2":"#17577f","angle":170,"text":"#eaf2fa","btnStyle":"soft","btnShape":"rounded","btnBg":"#eaf2fa","btnText":"#0b2545"},"chicle":{"label":"Chicle","font":"bricolage","bgType":"solid","bg":"#ffe3ec","bg2":"#ffc9da","angle":160,"text":"#3a1024","btnStyle":"fill","btnShape":"pill","btnBg":"#d6286a","btnText":"#ffffff"},"terminal":{"label":"Terminal","font":"mono","bgType":"solid","bg":"#0a0f0a","bg2":"#122012","angle":160,"text":"#7cff8a","btnStyle":"outline","btnShape":"square","btnBg":"#7cff8a","btnText":"#0a0f0a"},"arcilla":{"label":"Arcilla","font":"syne","bgType":"gradient","bg":"#b34a24","bg2":"#a8431f","angle":200,"text":"#fff6ef","btnStyle":"fill","btnShape":"rounded","btnBg":"#fff6ef","btnText":"#7a2c12"},"museo":{"label":"Museo","font":"playfair","bgType":"solid","bg":"#ffffff","bg2":"#f2f2f2","angle":160,"text":"#111111","btnStyle":"outline","btnShape":"square","btnBg":"#111111","btnText":"#ffffff"}},"fonts":{"sistema":{"g":""},"inter":{"g":"Inter:wght@400;500;600;700"},"dmsans":{"g":"DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700"},"grotesk":{"g":"Space+Grotesk:wght@400;500;700"},"outfit":{"g":"Outfit:wght@400;500;700"},"bricolage":{"g":"Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800"},"syne":{"g":"Syne:wght@400;600;800"},"fraunces":{"g":"Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800"},"playfair":{"g":"Playfair+Display:wght@400;600;800"},"mono":{"g":"JetBrains+Mono:wght@400;500;700"}},"socials":{"instagram":1,"tiktok":1,"youtube":1,"x":1,"threads":1,"facebook":1,"twitch":1,"kick":1,"linkedin":1,"github":1,"bluesky":1,"pinterest":1,"snapchat":1,"spotify":1,"patreon":1,"discord":1,"telegram":1,"whatsapp":1,"email":1,"web":1}}
+{"templates":{"papel":{"label":"Papel","font":"dmsans","bgType":"solid","bg":"#f3efe6","bg2":"#e6dfcf","angle":160,"text":"#161513","btnStyle":"fill","btnShape":"pill","btnBg":"#161513","btnText":"#f3efe6"},"noche":{"label":"Noche","font":"inter","bgType":"solid","bg":"#0f1013","bg2":"#1c1e24","angle":160,"text":"#f2f2f0","btnStyle":"outline","btnShape":"rounded","btnBg":"#f2f2f0","btnText":"#0f1013"},"lima":{"label":"Lima","font":"grotesk","bgType":"solid","bg":"#d4f45a","bg2":"#b9e23a","angle":160,"text":"#121212","btnStyle":"shadow","btnShape":"rounded","btnBg":"#ffffff","btnText":"#121212"},"cristal":{"label":"Cristal","font":"outfit","bgType":"gradient","bg":"#2d1f8f","bg2":"#9c2a6b","angle":150,"text":"#ffffff","btnStyle":"glass","btnShape":"pill","btnBg":"#ffffff","btnText":"#ffffff"},"editorial":{"label":"Editorial","font":"fraunces","bgType":"solid","bg":"#f7f3ec","bg2":"#ede6d8","angle":160,"text":"#1b1a17","btnStyle":"line","btnShape":"square","btnBg":"#1b1a17","btnText":"#f7f3ec"},"oceano":{"label":"Océano","font":"inter","bgType":"gradient","bg":"#0b2545","bg2":"#17577f","angle":170,"text":"#eaf2fa","btnStyle":"soft","btnShape":"rounded","btnBg":"#eaf2fa","btnText":"#0b2545"},"chicle":{"label":"Chicle","font":"bricolage","bgType":"solid","bg":"#ffe3ec","bg2":"#ffc9da","angle":160,"text":"#3a1024","btnStyle":"fill","btnShape":"pill","btnBg":"#d6286a","btnText":"#ffffff"},"terminal":{"label":"Terminal","font":"mono","bgType":"solid","bg":"#0a0f0a","bg2":"#122012","angle":160,"text":"#7cff8a","btnStyle":"outline","btnShape":"square","btnBg":"#7cff8a","btnText":"#0a0f0a"},"arcilla":{"label":"Arcilla","font":"syne","bgType":"gradient","bg":"#b34a24","bg2":"#a8431f","angle":200,"text":"#fff6ef","btnStyle":"fill","btnShape":"rounded","btnBg":"#fff6ef","btnText":"#7a2c12"},"museo":{"label":"Museo","font":"playfair","bgType":"solid","bg":"#ffffff","bg2":"#f2f2f2","angle":160,"text":"#111111","btnStyle":"outline","btnShape":"square","btnBg":"#111111","btnText":"#ffffff"},"fichas":{"label":"Fichas","layout":"fichas","font":"intertight","bgType":"solid","bg":"#000000","bg2":"#d6d5d0","angle":160,"text":"#000000","btnStyle":"fill","btnShape":"rounded","btnBg":"#e4500e","btnText":"#f7f6f2"}},"fonts":{"sistema":{"g":""},"inter":{"g":"Inter:wght@400;500;600;700"},"dmsans":{"g":"DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700"},"grotesk":{"g":"Space+Grotesk:wght@400;500;700"},"outfit":{"g":"Outfit:wght@400;500;700"},"bricolage":{"g":"Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800"},"syne":{"g":"Syne:wght@400;600;800"},"fraunces":{"g":"Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800"},"playfair":{"g":"Playfair+Display:wght@400;600;800"},"intertight":{"g":"Inter+Tight:wght@400;500;600"},"mono":{"g":"JetBrains+Mono:wght@400;500;700"}},"socials":{"instagram":1,"tiktok":1,"youtube":1,"x":1,"threads":1,"facebook":1,"twitch":1,"kick":1,"linkedin":1,"github":1,"bluesky":1,"pinterest":1,"snapchat":1,"spotify":1,"patreon":1,"discord":1,"telegram":1,"whatsapp":1,"email":1,"web":1}}
 VT_DATA, true);
 
 // ------------------------------------------------------------------ almacenamiento
@@ -163,6 +163,8 @@ function vt_sanitize($c) {
       'sub' => $kind === 'link' ? vt_str($g($i, 'sub'), 140) : '',
       'thumb' => $kind === 'link' ? vt_imgid($g($i, 'thumb')) : '',
       'hidden' => $g($i, 'hidden') === true,
+      'badge' => $kind === 'link' ? vt_str($g($i, 'badge'), 12) : '',
+      'brand' => $kind === 'link' ? vt_str($g($i, 'brand'), 30) : '',
       'hl' => $kind === 'link' && $g($i, 'hl') === true,
     ];
   }
@@ -173,6 +175,8 @@ function vt_sanitize($c) {
     'socials' => $socials,
     'socialsPos' => vt_one($g($c, 'socialsPos'), ['top', 'bottom'], 'top'),
     'items' => $items,
+    'feature' => ['url' => vt_url($g($g($c, 'feature'), 'url')), 'title' => vt_str($g($g($c, 'feature'), 'title'), 100), 'image' => vt_imgid($g($g($c, 'feature'), 'image'))],
+    'cta' => vt_str($g($c, 'cta'), 24),
     'theme' => [
       'template' => $base['template'],
       'font' => vt_one($g($t, 'font'), array_keys($VT['fonts']), $base['font']),
@@ -189,6 +193,7 @@ function vt_sanitize($c) {
     'seo' => ['title' => vt_str($g($seo, 'title'), 70), 'desc' => vt_str($g($seo, 'desc'), 160)],
   ];
   if ($o['theme']['bgType'] === 'image' && !$o['theme']['bgImage']) $o['theme']['bgType'] = 'solid';
+  if (!empty($VT['templates'][$o['theme']['template']]['layout'])) $o['theme']['bgType'] = 'solid';
   return $o;
 }
 function vt_used_images($c) {
@@ -196,6 +201,7 @@ function vt_used_images($c) {
   if ($c['profile']['avatar']) $out[] = $c['profile']['avatar'];
   if ($c['theme']['bgImage']) $out[] = $c['theme']['bgImage'];
   foreach ($c['items'] as $i) if ($i['thumb']) $out[] = $i['thumb'];
+  if ($c['feature']['image']) $out[] = $c['feature']['image'];
   return $out;
 }
 function vt_config() { $c = vt_read('config'); return is_array($c) ? vt_sanitize($c) : null; }
@@ -327,6 +333,7 @@ function vt_api($path) {
     if (is_array($d) && isset($d['t']) && ($d['t'] === 'c' || $d['t'] === 's') && isset($d['id']) && is_string($d['id'])) {
       $cfg = vt_config();
       if ($cfg && $d['t'] === 'c') foreach ($cfg['items'] as $i) if ($i['id'] === $d['id'] && $i['kind'] === 'link' && !$i['hidden']) $key = 'c:' . $d['id'];
+      if ($cfg && $d['t'] === 'c' && $d['id'] === 'video' && $cfg['feature']['url']) $key = 'c:video';
       if ($cfg && $d['t'] === 's') foreach ($cfg['socials'] as $s) if ($s['type'] === $d['id']) $key = 's:' . $d['id'];
     }
     if ($key) vt_count($key);
@@ -394,6 +401,7 @@ function vt_api($path) {
     $keep = function ($id) use (&$missing) { if ($id && !is_file(vt_dir() . '/img/' . $id . '.img')) { $missing++; return ''; } return $id; };
     $cfg['profile']['avatar'] = $keep($cfg['profile']['avatar']);
     $cfg['theme']['bgImage'] = $keep($cfg['theme']['bgImage']);
+    $cfg['feature']['image'] = $keep($cfg['feature']['image']);
     if ($cfg['theme']['bgType'] === 'image' && !$cfg['theme']['bgImage']) $cfg['theme']['bgType'] = 'solid';
     foreach ($cfg['items'] as $k => $i) $cfg['items'][$k]['thumb'] = $keep($i['thumb']);
     $now = (int)round(microtime(true) * 1000);
@@ -517,6 +525,7 @@ var __name=function(f){return f};var VitrinaR=(function vitrinaRenderer() {
     syne: { label: "Syne", css: "'Syne',system-ui,sans-serif", g: "Syne:wght@400;600;800" },
     fraunces: { label: "Fraunces", css: "'Fraunces',Georgia,serif", g: "Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800" },
     playfair: { label: "Playfair", css: "'Playfair Display',Georgia,serif", g: "Playfair+Display:wght@400;600;800" },
+    intertight: { label: "Inter Tight", css: "'Inter Tight',system-ui,sans-serif", g: "Inter+Tight:wght@400;500;600" },
     mono: { label: "JetBrains Mono", css: "'JetBrains Mono',ui-monospace,monospace", g: "JetBrains+Mono:wght@400;500;700" }
   };
 
@@ -532,7 +541,10 @@ var __name=function(f){return f};var VitrinaR=(function vitrinaRenderer() {
     chicle: { label: "Chicle", font: "bricolage", bgType: "solid", bg: "#ffe3ec", bg2: "#ffc9da", angle: 160, text: "#3a1024", btnStyle: "fill", btnShape: "pill", btnBg: "#d6286a", btnText: "#ffffff" },
     terminal: { label: "Terminal", font: "mono", bgType: "solid", bg: "#0a0f0a", bg2: "#122012", angle: 160, text: "#7cff8a", btnStyle: "outline", btnShape: "square", btnBg: "#7cff8a", btnText: "#0a0f0a" },
     arcilla: { label: "Arcilla", font: "syne", bgType: "gradient", bg: "#b34a24", bg2: "#a8431f", angle: 200, text: "#fff6ef", btnStyle: "fill", btnShape: "rounded", btnBg: "#fff6ef", btnText: "#7a2c12" },
-    museo: { label: "Museo", font: "playfair", bgType: "solid", bg: "#ffffff", bg2: "#f2f2f2", angle: 160, text: "#111111", btnStyle: "outline", btnShape: "square", btnBg: "#111111", btnText: "#ffffff" }
+    museo: { label: "Museo", font: "playfair", bgType: "solid", bg: "#ffffff", bg2: "#f2f2f2", angle: 160, text: "#111111", btnStyle: "outline", btnShape: "square", btnBg: "#111111", btnText: "#ffffff" },
+    // Plantilla con composición propia: portada en módulos y una ficha apilada por enlace.
+    // bg = fondo · bg2 = módulos · text = texto · btnBg = acento · btnText = papel de las fichas
+    fichas: { label: "Fichas", layout: "fichas", font: "intertight", bgType: "solid", bg: "#000000", bg2: "#d6d5d0", angle: 160, text: "#000000", btnStyle: "fill", btnShape: "rounded", btnBg: "#e4500e", btnText: "#f7f6f2" }
   };
 
   var BTN_STYLES = ["fill", "outline", "shadow", "glass", "soft", "line"];
@@ -632,7 +644,9 @@ var __name=function(f){return f};var VitrinaR=(function vitrinaRenderer() {
       socialsPos: "top",
       items: [],
       theme: defaultTheme("papel"),
-      seo: { title: "", desc: "" }
+      seo: { title: "", desc: "" },
+      feature: { url: "", title: "", image: "" },
+      cta: ""
     };
   }
 
@@ -668,9 +682,17 @@ var __name=function(f){return f};var VitrinaR=(function vitrinaRenderer() {
           sub: kind === "link" ? str(i.sub, 140) : "",
           thumb: kind === "link" ? imgId(i.thumb) : "",
           hidden: i.hidden === true,
+          badge: kind === "link" ? str(i.badge, 12) : "",
+          brand: kind === "link" ? str(i.brand, 30) : "",
           hl: kind === "link" && i.hl === true
         };
       }).filter(function (i) { return i.id; }),
+      feature: {
+        url: safeUrl(c.feature && c.feature.url),
+        title: str(c.feature && c.feature.title, 100),
+        image: imgId(c.feature && c.feature.image)
+      },
+      cta: str(c.cta, 24),
       theme: {
         template: base.template,
         font: oneOf(t.font, Object.keys(FONTS), base.font),
@@ -689,6 +711,7 @@ var __name=function(f){return f};var VitrinaR=(function vitrinaRenderer() {
       seo: { title: str(c.seo && c.seo.title, 70), desc: str(c.seo && c.seo.desc, 160) }
     };
     if (o.theme.bgType === "image" && !o.theme.bgImage) o.theme.bgType = "solid";
+    if (TEMPLATES[o.theme.template].layout) o.theme.bgType = "solid";
     return o;
   }
 
@@ -698,6 +721,7 @@ var __name=function(f){return f};var VitrinaR=(function vitrinaRenderer() {
     if (c.profile.avatar) out.push(c.profile.avatar);
     if (c.theme.bgImage) out.push(c.theme.bgImage);
     c.items.forEach(function (i) { if (i.thumb) out.push(i.thumb); });
+    if (c.feature.image) out.push(c.feature.image);
     return out;
   }
 
@@ -719,7 +743,110 @@ var __name=function(f){return f};var VitrinaR=(function vitrinaRenderer() {
   function isDark(h) { var c = hexToRgb(h); return (c[0] * 299 + c[1] * 587 + c[2] * 114) / 1000 < 140; }
 
   // ---------- CSS de la página ----------
+  function layoutOf(c) { var t = TEMPLATES[c.theme.template]; return (t && t.layout) || "classic"; }
+
+  // Plantilla Fichas: los títulos de sección hacen de categorías (pestañas).
+  function fichasData(c) {
+    var cats = [], cur = null, links = [];
+    c.items.forEach(function (i) {
+      if (i.hidden) return;
+      if (i.kind === "header") { cur = i.title ? { title: i.title, n: 0, added: false } : null; return; }
+      if (!safeUrl(i.url)) return;
+      if (cur && !cur.added) { cur.added = true; cats.push(cur); }
+      links.push({ i: i, cat: cur ? cats.indexOf(cur) : -1, pos: cur ? cur.n++ : 0 });
+    });
+    return { cats: cats, links: links };
+  }
+
+  function cssFichas(c) {
+    var t = c.theme, font = (FONTS[t.font] || FONTS.sistema).css, d = fichasData(c), s = "";
+    d.links.forEach(function (l, n) { s += ".s" + n + "{--i:" + Math.min(n, 7) + "}"; });
+    d.cats.forEach(function (x, j) {
+      s += "#vc" + j + ":checked~.tabs label[for=vc" + j + "]{background:" + t.btnBg + ";border-color:" + t.btnBg + ";color:" + t.bg + "}" +
+        "#vc" + j + ":focus-visible~.tabs label[for=vc" + j + "]{outline:2px solid " + t.btnBg + ";outline-offset:2px}" +
+        "#vc" + j + ":checked~.st .sh:not(.c" + j + "){display:none}";
+    });
+    d.links.forEach(function (l, n) { if (l.cat >= 0) s += "#vc" + l.cat + ":checked~.st .s" + n + "{--i:" + Math.min(l.pos, 7) + "}"; });
+    return "*,*::before,*::after{box-sizing:border-box;margin:0}" +
+      "html{background:" + t.bg + ";-webkit-text-size-adjust:100%}" +
+      "body{background:" + t.bg + ";color:" + t.text + ";font:500 15px/1.15 " + font + ";letter-spacing:-.02em;-webkit-font-smoothing:antialiased}" +
+      ".w{max-width:430px;margin:auto;padding:14px 12px 90px;display:grid;gap:8px}" +
+      "a{color:inherit;text-decoration:none;display:block}" +
+      "a:focus-visible{outline:2px solid " + t.btnBg + ";outline-offset:2px}" +
+      ".mod{background:" + t.bg2 + ";border-radius:14px;padding:12px 14px;overflow:hidden}" +
+      ".hero{display:grid;grid-template-columns:1fr 92px;gap:10px;align-items:end;min-height:136px}" +
+      ".hero img,.ini{width:92px;height:112px;object-fit:cover;border-radius:9px}" +
+      ".ini{display:grid;place-items:center;background:" + t.btnBg + ";font-size:48px}" +
+      "h1{font-size:43px;line-height:.92;letter-spacing:-.055em;font-weight:500;overflow-wrap:anywhere}" +
+      ".bio{margin-bottom:12px;font-size:14px;line-height:1.2}" +
+      ".soc{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}" +
+      ".soc a{background:" + t.bg2 + ";border-radius:12px;height:52px;display:grid;place-items:center;font-size:14px}" +
+      ".vid{padding:0;background:" + t.btnBg + "}" +
+      ".vid img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}" +
+      ".vid div{padding:10px 14px 12px;display:flex;justify-content:space-between;gap:12px}" +
+      ".rd{position:absolute;opacity:0;pointer-events:none}" +
+      ".tabs{display:flex;gap:8px;overflow:auto;scrollbar-width:none;margin:8px 0 6px}" +
+      ".tabs label{cursor:pointer;color:" + t.bg2 + ";border:1.5px solid " + t.bg2 + ";border-radius:99px;padding:9px 16px;font-size:14px;flex:none}" +
+      "#vca:checked~.tabs label[for=vca]{background:" + t.btnBg + ";border-color:" + t.btnBg + ";color:" + t.bg + "}" +
+      "#vca:focus-visible~.tabs label[for=vca]{outline:2px solid " + t.btnBg + ";outline-offset:2px}" +
+      ".sh{position:sticky;top:calc(12px + var(--i,0)*13px);background:" + t.btnText + ";border-radius:14px;padding:14px 16px 16px;height:510px;box-shadow:0 -10px 22px -12px rgba(0,0,0,.7);margin-bottom:20px;display:flex;flex-direction:column}" +
+      ".sh.ni{height:auto}" +
+      ".top{display:flex;justify-content:space-between;gap:12px;font-size:13.5px}" +
+      "h2{font-size:42px;line-height:.93;letter-spacing:-.055em;font-weight:500;margin-top:8px;overflow-wrap:anywhere}" +
+      ".pic{flex:1;min-height:0;position:relative}" +
+      ".pic img{position:absolute;inset:12px 26px;width:calc(100% - 52px);height:calc(100% - 24px);object-fit:contain}" +
+      "dl{display:grid;grid-template-columns:auto 1fr;gap:0 18px;border-top:1px solid " + t.text + "}" +
+      ".ni dl{margin-top:14px}" +
+      "dt,dd{padding:7px 0;border-bottom:1px solid " + rgba(t.text, 0.18) + ";font-size:14px}" +
+      "dd{text-align:right}" +
+      ".cta{margin-top:12px;background:" + t.text + ";color:" + t.btnText + ";display:flex;justify-content:space-between;padding:15px 16px;border-radius:9px}" +
+      ".cta span+span{color:" + t.btnBg + "}" +
+      ".vac{color:" + t.bg2 + ";padding:20px 4px}" + s;
+  }
+
+  function innerFichas(c, o) {
+    var p = c.profile, img = o.img, d = fichasData(c), h = '<main class="w"><section class="mod hero"><div>';
+    if (p.bio) h += '<p class="bio">' + esc(p.bio).replace(/\n/g, "<br>") + "</p>";
+    if (p.name) h += "<h1>" + esc(p.name) + "</h1>";
+    h += "</div>";
+    if (p.avatar) h += '<img src="' + esc(img(p.avatar)) + '" alt="" width="92" height="112">';
+    else if (p.name) h += '<div class="ini" aria-hidden="true">' + esc(Array.from(p.name)[0].toUpperCase()) + "</div>";
+    h += "</section>";
+    var soc = c.socials.filter(function (s) { return safeUrl(s.url); });
+    if (soc.length) {
+      h += '<nav class="soc" aria-label="Redes">';
+      soc.forEach(function (s) { h += '<a href="' + esc(safeUrl(s.url)) + '" data-s="' + esc(s.type) + '" rel="noopener me">' + esc((SOCIALS[s.type] || SOCIALS.web).label) + "</a>"; });
+      h += "</nav>";
+    }
+    var f = c.feature;
+    if (f.url && f.image) {
+      h += '<a class="mod vid" href="' + esc(f.url) + '" data-i="video" rel="noopener"><img src="' + esc(img(f.image)) + '" alt=""><div><span>' + esc(f.title) + "</span><span>Ver</span></div></a>";
+    }
+    if (d.cats.length) {
+      h += '<input class="rd" type="radio" name="vc" id="vca" checked aria-label="Todo">';
+      d.cats.forEach(function (x, j) { h += '<input class="rd" type="radio" name="vc" id="vc' + j + '" aria-label="' + esc(x.title) + '">'; });
+      h += '<div class="tabs"><label for="vca">Todo</label>';
+      d.cats.forEach(function (x, j) { h += '<label for="vc' + j + '">' + esc(x.title) + "</label>"; });
+      h += "</div>";
+    }
+    h += '<div class="st">';
+    d.links.forEach(function (l, n) {
+      var i = l.i, u = safeUrl(i.url), title = i.title || u.replace(/^(https?:\/\/|mailto:|tel:)/i, "").replace(/\/$/, "");
+      h += '<a class="sh s' + n + (l.cat >= 0 ? " c" + l.cat : "") + (i.thumb ? "" : " ni") + '" href="' + esc(u) + '" data-i="' + esc(i.id) + '" rel="noopener">';
+      h += '<div class="top"><span>' + (l.cat >= 0 ? esc(d.cats[l.cat].title) : "") + "</span></div><h2>" + esc(title) + "</h2>";
+      if (i.thumb) h += '<div class="pic"><img src="' + esc(img(i.thumb)) + '" alt="" loading="lazy"></div>';
+      if (i.brand || i.sub) {
+        h += "<dl>" + (i.brand ? "<dt>Marca</dt><dd>" + esc(i.brand) + "</dd>" : "") + (i.sub ? "<dt>Qué es</dt><dd>" + esc(i.sub) + "</dd>" : "") + "</dl>";
+      }
+      h += '<div class="cta"><span>' + esc(c.cta || "Abrir") + "</span>" + (i.badge ? "<span>" + esc(i.badge) + "</span>" : "") + "</div></a>";
+    });
+    h += "</div>";
+    if (!d.links.length && o.preview) h += '<p class="vac">Aquí saldrán tus fichas.</p>';
+    return h + "</main>";
+  }
+
   function css(c, img) {
+    if (layoutOf(c) === "fichas") return cssFichas(c);
     var t = c.theme;
     var font = (FONTS[t.font] || FONTS.sistema).css;
     var radius = { pill: "999px", rounded: "16px", square: "4px" }[t.btnShape];
@@ -793,6 +920,7 @@ var __name=function(f){return f};var VitrinaR=(function vitrinaRenderer() {
 
   // ---------- HTML ----------
   function inner(c, o) {
+    if (layoutOf(c) === "fichas") return innerFichas(c, o);
     var p = c.profile;
     var img = o.img;
     var h = '<main class="w">';
@@ -878,7 +1006,7 @@ var __name=function(f){return f};var VitrinaR=(function vitrinaRenderer() {
     esc: esc, safeUrl: safeUrl, socialUrl: socialUrl, normalizeUrl: normalizeUrl,
     sanitize: sanitize, defaultConfig: defaultConfig, defaultTheme: defaultTheme, usedImages: usedImages,
     renderPage: renderPage, css: css, inner: inner, fontHref: fontHref, icon: icon, isDark: isDark,
-    pageTitle: pageTitle, PREVIEW_CSS: PREVIEW_CSS, pageDesc: pageDesc, HIT_SCRIPT: HIT_SCRIPT
+    pageTitle: pageTitle, PREVIEW_CSS: PREVIEW_CSS, layoutOf: layoutOf, pageDesc: pageDesc, HIT_SCRIPT: HIT_SCRIPT
   };
 })();
 VT_RENDER;
@@ -1034,6 +1162,7 @@ input[type=range]{width:100%;accent-color:var(--ink)}
 .tools .ib svg{width:16px;height:16px}
 .tools .badge{margin-left:auto;font-size:12px;color:var(--muted);padding:0 8px}
 @media (max-width:520px){.tools .lb{display:none}.tools .ib{width:36px;padding:0;justify-content:center}.tools .ib .thumbmini{margin:0}}
+.fx{display:grid;grid-template-columns:1fr 1fr;gap:4px}
 .thumbmini{width:24px;height:24px;border-radius:6px;object-fit:cover}
 .it.hd{padding:10px 12px 10px 4px;background:var(--soft);box-shadow:none;border-style:dashed}
 .it.hd .tin{font-size:12.5px;text-transform:uppercase;letter-spacing:.08em}
@@ -1366,8 +1495,8 @@ function prepImage(file, kind) {
   if (!/^image\//.test(file.type) && !/\.(jpe?g|png|webp|gif|heic|heif)$/i.test(file.name)) return Promise.reject(new Error("Ese archivo no es una imagen."));
   if (file.size > 25 * 1024 * 1024) return Promise.reject(new Error("La imagen pesa más de 25 MB. Prueba con una más pequeña."));
   if (file.type === "image/gif" && file.size <= 1200 * 1024 && kind !== "bg") return Promise.resolve(file);
-  var size = kind === "avatar" ? 480 : kind === "thumb" ? 176 : 1800;
-  var square = kind !== "bg";
+  var size = kind === "avatar" ? 480 : kind === "thumb" ? 900 : 1800;
+  var square = kind === "avatar";
   var load = window.createImageBitmap ? createImageBitmap(file, { imageOrientation: "from-image" }).catch(function () { return loadImg(file); }) : loadImg(file);
   return load.then(function (bmp) {
     var w = bmp.width, hh = bmp.height, sx = 0, sy = 0, sw = w, sh = hh;
@@ -1464,6 +1593,7 @@ function tabLinks(ed) {
     h("button", { class: "btn pri", icon: "plus", onclick: function () { addItem("link"); } }, "Añadir enlace"),
     h("button", { class: "btn", icon: "heading", onclick: function () { addItem("header"); } }, "Título de sección")));
 
+  if (fichas()) ed.append(featureCard());
   var list = h("div", { class: "list", id: "list" });
   if (!c.items.length) {
     list.append(h("div", { class: "empty" }, h("b", {}, "Todavía no hay enlaces"), "Añade tu web, tu último vídeo, tu tienda o tu WhatsApp."));
@@ -1501,7 +1631,7 @@ function itemCard(it, idx) {
     }
   });
   var get = function () { return cfg.items.find(function (x) { return x.id === it.id; }); };
-  var title = h("input", { class: "tin", value: it.title, maxlength: 100, placeholder: it.kind === "header" ? "Título de la sección" : "Título del botón", "aria-label": "Título",
+  var title = h("input", { class: "tin", value: it.title, maxlength: 100, placeholder: it.kind === "header" ? (fichas() ? "Categoría" : "Título de la sección") : "Título del botón", "aria-label": "Título",
     oninput: function () { var v = title.value; change(function () { get().title = v; }, "t" + it.id); } });
   var vis = h("button", { class: "sw", role: "switch", "aria-checked": String(!it.hidden), "aria-label": "Visible en tu página", title: it.hidden ? "Oculto" : "Visible",
     onclick: function () { change(function () { get().hidden = !get().hidden; }); var o = get().hidden; vis.setAttribute("aria-checked", String(!o)); vis.title = o ? "Oculto" : "Visible"; card.classList.toggle("off", o); } });
@@ -1533,6 +1663,12 @@ function itemCard(it, idx) {
       return s;
     }
     body.append(extra);
+    if (fichas()) {
+      if (!extra.firstChild) extra.append(subInput());
+      var bd = h("input", { class: "sin", value: it.badge || "", maxlength: 12, placeholder: "Dato (45W, -15 %…)", "aria-label": "Dato destacado", oninput: function () { var v = bd.value; change(function () { get().badge = v; }, "bd" + it.id); } });
+      var br = h("input", { class: "sin", value: it.brand || "", maxlength: 30, placeholder: "Marca", "aria-label": "Marca", oninput: function () { var v = br.value; change(function () { get().brand = v; }, "br" + it.id); } });
+      body.append(h("div", { class: "fx" }, bd, br));
+    }
     var thumbBtn = h("button", { class: "ib" + (it.thumb ? " on" : ""), title: it.thumb ? "Cambiar o quitar la miniatura" : "Añadir una miniatura",
       onclick: function () {
         if (get().thumb) {
@@ -1640,6 +1776,21 @@ function setupDrag(handle, card) {
   });
 }
 
+function fichas() { return R.layoutOf(R.sanitize(cfg)) === "fichas"; }
+function featureCard() {
+  var f = cfg.feature || (cfg.feature = { url: "", title: "", image: "" });
+  var msg = h("div", { class: "msg bad", hidden: true });
+  var u = h("input", { class: "in", value: f.url, placeholder: "Enlace del vídeo o de lo que quieras destacar", "aria-label": "Enlace destacado", autocapitalize: "off", spellcheck: "false",
+    oninput: function () { var v = u.value.trim(); u.classList.remove("err"); msg.hidden = true; change(function (c) { c.feature.url = v; }, "fu"); },
+    onchange: function () { var v = R.normalizeUrl(u.value); u.value = v; change(function (c) { c.feature.url = v; }, "fu"); checkUrl(u, msg, v); } });
+  var t = h("input", { class: "in", value: f.title, maxlength: 100, placeholder: "Título", "aria-label": "Título destacado", oninput: function () { var v = t.value; change(function (c) { c.feature.title = v; }, "ft"); } });
+  var prev = h("button", { class: "avbig", style: "border-radius:10px;width:160px;height:90px", "aria-label": "Subir imagen", onclick: up }, f.image ? h("img", { src: imgUrl(f.image), alt: "" }) : h("span", { icon: "image" }));
+  function up() { pickFile(function (x) { uploadImage(x, "bg").then(setI, errToast); }); }
+  function setI(id) { change(function (c) { c.feature.image = id; }); renderTab(); }
+  dropZone(prev, "bg", setI);
+  return h("div", { class: "card" }, h("h3", {}, "Destacado ", h("small", {}, "tu último vídeo, por ejemplo")),
+    h("div", { class: "row", style: "align-items:flex-start;flex-wrap:wrap" }, prev, h("div", { style: "flex:1;min-width:200px;display:grid;gap:8px" }, u, t, msg)));
+}
 function socialsCard() {
   var card = h("div", { class: "card" }, h("h3", {}, "Redes sociales ", h("small", {}, "salen como iconos")));
   var box = h("div", { class: "soc" });
@@ -1753,19 +1904,31 @@ function tabDesign(ed) {
   Object.keys(R.TEMPLATES).forEach(function (k) {
     var tp = R.TEMPLATES[k];
     var mock = h("div", { class: "mock", style: bgStyle(tp) + ";font-family:" + R.FONTS[tp.font].css + ";color:" + tp.text },
-      h("div", { class: "dot", style: "background:" + tp.text + ";opacity:.85" }),
+      h("div", { class: "dot", style: "background:" + (tp.layout ? tp.bg2 : tp.text) + ";opacity:.85" }),
       h("div", { class: "bar", style: barStyle(tp) }), h("div", { class: "bar", style: barStyle(tp) }), h("div", { class: "bar", style: barStyle(tp) }));
     tpls.append(h("button", { class: "tpl", "aria-pressed": String(t.template === k), "aria-label": "Plantilla " + tp.label, onclick: function () {
       change(function (c) {
         var img = c.theme.bgImage, ov = c.theme.overlay, wasImg = c.theme.bgType === "image" && img;
         c.theme = R.defaultTheme(k); c.theme.bgImage = img; c.theme.overlay = ov;
-        if (wasImg) readableOnPhoto(c.theme);
+        if (wasImg && !R.TEMPLATES[k].layout) readableOnPhoto(c.theme);
       });
       renderTab();
     } }, mock, h("span", { class: "nm" }, tp.label)));
   });
   ed.append(h("div", { class: "card" }, h("h3", {}, "Plantillas"), tpls));
 
+  if (R.TEMPLATES[t.template].layout === "fichas") {
+    var host = h("div", { class: "card", id: "warnhost" }, h("h3", {}, "Colores"), h("div", { class: "grid2" },
+      colorField("Fondo", "bg"), colorField("Módulos de arriba", "bg2"), colorField("Texto", "text"), colorField("Acento", "btnBg"), colorField("Papel de las fichas", "btnText")));
+    var w0 = contrastWarning(); if (w0) host.append(w0);
+    ed.append(host);
+    var ctaI = h("input", { class: "in", value: cfg.cta || "", maxlength: 24, placeholder: "Abrir", oninput: function () { var v = ctaI.value; change(function (c) { c.cta = v; }, "cta"); } });
+    var fl = h("div", { class: "fonts" });
+    Object.keys(R.FONTS).forEach(function (k) { var f = R.FONTS[k]; fl.append(h("button", { "aria-pressed": String(t.font === k), style: "font-family:" + f.css + ";font-weight:600", onclick: function () { change(function (c) { c.theme.font = k; }); renderTab(); } }, f.label)); });
+    ed.append(h("div", { class: "card" }, h("h3", {}, "Texto"), h("label", { class: "field" }, h("span", {}, "Botón de cada ficha"), ctaI), fl,
+      h("p", { class: "hint", style: "margin-top:10px" }, "Los títulos de sección de la pestaña Enlaces son las categorías de arriba de las fichas.")));
+    return;
+  }
   // Fondo
   var fondo = h("div", { class: "card" }, h("h3", {}, "Fondo"));
   fondo.append(seg([["solid", "Color"], ["gradient", "Degradado"], ["image", "Imagen"]], t.bgType, function (v) {
@@ -1832,6 +1995,13 @@ function readableOnPhoto(t) {
 function mix(a, b, k) { var x = parseInt(a.slice(1), 16), y = parseInt(b.slice(1), 16); var o = [16, 8, 0].map(function (s) { return Math.round(((x >> s) & 255) * (1 - k) + ((y >> s) & 255) * k); }); return "#" + o.map(function (v) { return v.toString(16).padStart(2, "0"); }).join(""); }
 function contrastIssues(t) {
   // Fondos que hay detrás del texto: el color (o los dos del degradado); con foto, un gris medio con el velo.
+  if (R.TEMPLATES[t.template].layout === "fichas") {
+    var b2 = [];
+    if (contrast(t.text, t.bg2) < 4.5) b2.push("el texto y los módulos");
+    if (contrast(t.text, t.btnText) < 4.5) b2.push("el texto y las fichas");
+    if (contrast(t.btnBg, t.text) < 3) b2.push("el acento y el texto");
+    return b2;
+  }
   var bgs = t.bgType === "gradient" ? [t.bg, t.bg2] : t.bgType === "image" ? [mix("#8a8a8a", "#000000", t.overlay / 100)] : [t.bg];
   var low = function (a, b, min) { return contrast(a, b) < min; };
   var bad = [];
@@ -1867,7 +2037,7 @@ function refreshWarn() {
   var nw = contrastWarning();
   if (old && nw) old.replaceWith(nw);
   else if (old) old.remove();
-  else if (nw) { var cards = document.querySelectorAll("#ed .card"); if (cards[2]) cards[2].append(nw); }
+  else if (nw) { var cards = document.querySelectorAll("#ed .card"), wh = $("warnhost") || cards[2]; if (wh) wh.append(nw); }
 }
 function rangeField(label, key, min, max, unit) {
   var out = h("small", {}, " " + cfg.theme[key] + unit);
@@ -1907,7 +2077,8 @@ function tabStats(ed) {
     box.append(h("div", { class: "card chart" }, h("h3", {}, "Visitas por día"), chart(s.series)));
     var rows = cfg.items.filter(function (i) { return i.kind === "link"; }).map(function (i) { return [i.title || i.url || "Sin título", s.links[i.id] || 0]; });
     rows.sort(function (a, b) { return b[1] - a[1]; });
-    var known = {}; cfg.items.forEach(function (i) { known[i.id] = 1; });
+    var known = { video: 1 }; cfg.items.forEach(function (i) { known[i.id] = 1; });
+    if (s.links.video) rows.push(["Destacado", s.links.video]);
     var gone = Object.keys(s.links).reduce(function (t, k) { return known[k] ? t : t + s.links[k]; }, 0);
     if (gone) rows.push(["Enlaces que ya borraste", gone]);
     box.append(h("div", { class: "card" }, h("h3", {}, "Clics por enlace"), rank(rows, "Aún no hay enlaces.")));
@@ -1998,6 +2169,8 @@ function tabSettings(ed) {
 function publish() {
   var bad = cfg.items.filter(function (i) { return i.kind === "link" && i.url && !R.safeUrl(i.url); });
   var badS = cfg.socials.filter(function (s) { return s.url && !R.safeUrl(s.url); });
+  var fu = cfg.feature && cfg.feature.url;
+  if (fu && !R.safeUrl(fu)) badS = badS.concat([{}]);
   if (bad.length || badS.length) {
     go("enlaces");
     toast("Revisa " + plural(bad.length + badS.length, "dirección que está mal escrita", "direcciones que están mal escritas") + " (en rojo).", { bad: true });
