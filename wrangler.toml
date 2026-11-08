@@ -1,0 +1,12 @@
+# Vitrina · configuración de Cloudflare. No hace falta tocar nada.
+name = "vitrina"
+main = "src/worker.js"
+compatibility_date = "2026-06-01"
+workers_dev = true
+
+rules = [{ type = "Text", globs = ["**/*.html"], fallthrough = true }]
+
+# La base de datos se crea sola al desplegar (por eso no lleva database_id).
+[[d1_databases]]
+binding = "DB"
+database_name = "vitrina"

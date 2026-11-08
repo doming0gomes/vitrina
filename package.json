@@ -1,0 +1,23 @@
+{
+  "name": "vitrina",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tu página de enlaces (tipo Linktree) gratis en tu propia cuenta de Cloudflare, con panel para editarla.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.45.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "DB": {
+        "description": "La base de datos donde se guardan tu página, tus fotos y las estadísticas. Se crea sola: no toques nada."
+      },
+      "CONTRASENA": {
+        "description": "La contraseña para entrar en tu panel (tuweb/admin). Usa una larga, de **10 caracteres o más**, que no uses en otro sitio."
+      }
+    }
+  }
+}
